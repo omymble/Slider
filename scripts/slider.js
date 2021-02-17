@@ -1,6 +1,6 @@
 let images = ['images/img0.jpg', 'images/img1.jpg', 'images/img2.jpg']
 let numOfImg = images.length;
-// let navigation = document.body.getElementsByClassName('projects__navigation_item')
+
 let navigationLink = document.querySelectorAll('.projects__navigation_item a')
 
 let rounds = document.body.getElementsByClassName('projects__pointer')
@@ -37,15 +37,15 @@ let currentIndex = 0
 const setEntity = (index) => {
     for (let i = 0; i < numOfImg; i++) {
         if (i === index) {
-            navigationLink[i].style.color = '#E3B873';
-            rounds[i].style.background = '#FFFFFF';
+            navigationLink[i].parentElement.classList.add('projects__navigation_item_active');
+            rounds[i].classList.add('projects__pointer_active');
             let a = Object.values(newText[i]);
             for (let i = 0; i < text.length; i++) {
                 text[i].innerHTML = a[i];
             }
         } else {
-            navigationLink[i].style.color = 'rgba(255, 255, 255, 0.3)';
-            rounds[i].style.background = 'rgba(255, 255, 255, 0.3)';
+            navigationLink[i].parentElement.classList.remove('projects__navigation_item_active');
+            rounds[i].classList.remove('projects__pointer_active');
         }
     }
     image.src = images[index];
@@ -62,7 +62,7 @@ function prevPicture() {
 }
 
 function nextPicture() {
-    currentIndex = (currentIndex + 1) % 3;
+    currentIndex = (currentIndex + 1) % numOfImg;
     setEntity(currentIndex);
 }
 

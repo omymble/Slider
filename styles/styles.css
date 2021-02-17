@@ -124,6 +124,10 @@ body * {
     color: rgba(255, 255, 255, 0.3);
 }
 
+.projects__navigation_item_active a{
+    color: #E3B873;
+}
+
 .projects__content {
     display: flex;
     justify-content: space-between;
@@ -138,7 +142,6 @@ body * {
 .projects__title {
     color: #E3B873;
     width: 253px;
-    /*margin: 0 auto;*/
 }
 
 .projects__text {
@@ -159,16 +162,12 @@ body * {
     justify-content: space-around;
 }
 
-.projects__left {}
-.projects__right {}
-
 .projects__menu_item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0 0 34px 0;
 }
-
 
 .projects__arrow {
     display: flex;
@@ -195,6 +194,10 @@ body * {
     width: 10px;
     height: 10px;
     margin: 0 9px;
+}
+
+.projects__pointer_active {
+    background: #FFFFFF;
 }
 
 .menu__title {
